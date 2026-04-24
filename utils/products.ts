@@ -92,3 +92,28 @@ export function countActiveFilters(filters: FilterState): number {
   if (filters.featuredOnly) count += 1;
   return count;
 }
+
+/**
+ * Get a single product by its slug.
+ */
+export function getProductBySlug(products: Product[], slug: string): Product | undefined {
+  return products.find((p) => p.slug === slug);
+}
+
+/**
+ * Get related products (same category or same brand, excluding the current product).
+ * Returns up to `limit` products.
+ */
+export function getRelatedProducts(
+  products: Product[],
+  product: Product,
+  limit: number = 4
+): Product[] {
+  const related = products.filter(
+    (p) =>
+      p.id !== product.id &&
+      (p.categoryId === product.categoryId ||
+        (product.brandId && p.brandId === product.brandId))
+  );
+  return related.slice(0, limit);
+}

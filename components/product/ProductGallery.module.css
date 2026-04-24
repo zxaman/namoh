@@ -1,0 +1,31 @@
+.gallery { display: flex; flex-direction: column; gap: 12px; }
+.mainImage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #F8FAFC, #F1F5F9);
+  border: 1px solid var(--color-border);
+  cursor: crosshair;
+}
+.mainImage img { transition: transform 0.4s ease; }
+.mainImage:hover img { transform: scale(1.05); }
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+}
+.thumb {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--color-bg-light);
+  flex-shrink: 0;
+}
+.thumb:hover { border-color: var(--color-border-dark); }
+.thumbActive { border-color: var(--color-primary); box-shadow: 0 0 0 2px rgba(200, 16, 46, 0.15); }
