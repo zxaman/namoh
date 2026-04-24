@@ -1,0 +1,46 @@
+.banner {
+  background: linear-gradient(135deg, #0F172A, #1E293B);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.banner::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 16, 46, 0.15), transparent 70%);
+  right: -100px;
+  top: -100px;
+  pointer-events: none;
+}
+.text {}
+.title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 767px) {
+  .banner { flex-direction: column; padding: 28px 24px; text-align: center; }
+  .actions { width: 100%; flex-direction: column; }
+  .title { font-size: 18px; }
+}

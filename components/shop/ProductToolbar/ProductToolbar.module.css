@@ -1,0 +1,51 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 24px;
+}
+.left { display: flex; align-items: center; gap: 16px; }
+.count {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+.count strong { color: var(--color-dark); font-weight: 700; }
+.filterBtn {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: 10px;
+  border: 1.5px solid var(--color-border);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filterBtn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.filterBadge {
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--color-primary);
+  color: #fff;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right { display: flex; align-items: center; gap: 12px; }
+
+@media (max-width: 1023px) {
+  .filterBtn { display: flex; }
+}
+@media (max-width: 639px) {
+  .bar { flex-wrap: wrap; }
+}

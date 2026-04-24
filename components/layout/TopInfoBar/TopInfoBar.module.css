@@ -1,0 +1,78 @@
+.bar {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  color: #fff;
+  font-size: 12px;
+  position: relative;
+  overflow: hidden;
+}
+/* Subtle animated gradient shimmer */
+.bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 8s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+.left { display: flex; align-items: center; gap: 20px; }
+.right { display: flex; align-items: center; gap: 16px; }
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.2s;
+  text-decoration: none;
+  font-weight: 500;
+}
+.link:hover { color: #fff; }
+
+.muted { color: rgba(255,255,255,0.4); }
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #fff;
+  padding: 5px 16px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 2px 12px rgba(37, 211, 102, 0.25);
+}
+.whatsappBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+}
+
+.quoteText {
+  background: linear-gradient(135deg, #F59E0B, #FBBF24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .left { gap: 12px; }
+  .hideOnMobile { display: none; }
+}

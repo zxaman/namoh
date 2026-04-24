@@ -1,0 +1,53 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 48px 0;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+}
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.7));
+}
+.content {
+  position: relative;
+  z-index: 2;
+}
+.breadcrumbs { margin-bottom: 16px; }
+/* Override breadcrumb colors for dark bg */
+.breadcrumbs :global(.nav) a { color: rgba(255,255,255,0.6); }
+.breadcrumbs :global(.nav) a:hover { color: #fff; }
+.breadcrumbs :global(.current) { color: #fff; }
+.breadcrumbs :global(.separator) { color: rgba(255,255,255,0.3); }
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+.description {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  line-height: 1.6;
+}
+.count {
+  margin-top: 12px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+}
+@media (max-width: 767px) {
+  .hero { padding: 32px 0; min-height: 160px; }
+  .title { font-size: 24px; }
+}

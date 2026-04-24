@@ -1,0 +1,187 @@
+.footer {
+  background: linear-gradient(180deg, #0F172A 0%, #020617 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+/* Subtle decorative gradient circle */
+.footer::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 16, 46, 0.06), transparent 70%);
+  top: -200px;
+  right: -200px;
+  pointer-events: none;
+}
+
+.main { padding: 56px 0 44px; position: relative; z-index: 1; }
+.grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+/* About column */
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  margin-bottom: 18px;
+}
+.logoMark {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, var(--color-primary), #FF6B6B);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 16px;
+  box-shadow: 0 4px 16px rgba(200, 16, 46, 0.3);
+}
+.logoName { font-size: 20px; font-weight: 800; color: #fff; }
+.aboutText {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 24px;
+}
+
+.socials { display: flex; gap: 10px; }
+.socialLink {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  transition: all 0.3s;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.socialLink:hover {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(200, 16, 46, 0.3);
+}
+
+/* Link columns */
+.colTitle {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #fff;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 12px;
+}
+.colTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+  border-radius: 2px;
+}
+
+.linkList { list-style: none; padding: 0; margin: 0; }
+.linkItem { margin-bottom: 10px; }
+.link {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.link:hover {
+  color: #fff;
+  transform: translateX(4px);
+}
+.link::before {
+  content: '';
+  width: 0;
+  height: 1px;
+  background: var(--color-primary);
+  transition: width 0.3s;
+}
+.link:hover::before { width: 12px; }
+
+/* Contact */
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 14px;
+}
+.contactItem a {
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contactItem a:hover { color: var(--color-primary); }
+.contactIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: rgba(255,255,255,0.3);
+}
+
+/* Trust bar */
+.trustBar {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 14px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.25);
+  position: relative;
+  z-index: 1;
+}
+.dot { display: inline; }
+
+/* Copyright */
+.copyright {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  position: relative;
+  z-index: 1;
+}
+.copyrightLinks { display: flex; gap: 20px; }
+.copyrightLinks a {
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.copyrightLinks a:hover { color: rgba(255,255,255,0.7); }
+
+@media (max-width: 1023px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 639px) {
+  .grid { grid-template-columns: 1fr; gap: 32px; }
+  .copyright { flex-direction: column; gap: 8px; text-align: center; }
+}
